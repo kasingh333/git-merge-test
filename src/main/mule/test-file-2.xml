@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
+	<flow name="test-file-2Flow" doc:id="4b9e3649-d4bd-4abf-bd7b-ea8a2c9652bf" >
+		<http:listener doc:name="Listener" doc:id="0832a548-776d-40d4-9912-c412dca06dc8" config-ref="HTTP_Listener_config" path="/test1"/>
+		<ee:transform doc:name="Transform Message" doc:id="e4879b82-c8b1-42fb-90bf-a7b2399e8c4d" >
+			<ee:message >
+			</ee:message>
+			<ee:variables >
+				<ee:set-variable variableName="integrationName" ><![CDATA['test-integration']]></ee:set-variable>
+				<ee:set-variable variableName="integrationId" ><![CDATA['test-123']]></ee:set-variable>
+			</ee:variables>
+		</ee:transform>
+	</flow>
+</mule>
